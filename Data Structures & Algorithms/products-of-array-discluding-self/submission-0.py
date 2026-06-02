@@ -1,0 +1,24 @@
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        length = len(nums)
+        result = [1] * length
+
+        left_running_product = 1
+        for i in range(length):
+            result[i] = left_running_product
+            left_running_product *= nums[i]
+            
+        right_running_product = 1
+        for i in range(length - 1, -1, -1):
+            result[i] *= right_running_product
+            right_running_product *= nums[i]
+            
+        return result
+
+
+        
+           
+
+        
+
+        
